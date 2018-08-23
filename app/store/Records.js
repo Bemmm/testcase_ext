@@ -1,7 +1,7 @@
-Ext.define('testcase.store.Personnel', {
+Ext.define('testcase.store.Records', {
     extend: 'Ext.data.Store',
-
-    alias: 'store.personnel',
+    model: 'Record',
+    alias: 'store.records',
 
     fields: [
         'id', 'name', 'startDate', 'endDate', 'status'

@@ -1,8 +1,7 @@
 Ext.define('testcase.view.main.List', {
     extend: 'Ext.form.Panel',
     xtype: 'mainlist',
-    // controller: 'form-grid',
-
+    controller: 'list',
     requires: [
         'Ext.grid.*',
         'Ext.form.*',
@@ -35,24 +34,44 @@ Ext.define('testcase.view.main.List', {
     items: [{
             xtype: 'container',
             columnWidth: 1,
+            layout: {
+                type: 'table',
+                columns: 4,
+                tdAttrs: { style: 'padding: 5px 10px;' }
+            },
             items: [{
                 xtype: 'button',
-                iconCls: 'fa-plus',
                 text: 'Add',
+                scale: 'medium',
+                listeners: {
+                    click: 'onAdd'  // see Controller
+                }                
+            },
+            {
+                xtype: 'button',
+                text: 'Remove',
                 scale: 'medium'
-            }, ]
+            },
+            {
+                xtype: 'button',
+                text: 'Run',
+                scale: 'medium'
+            },
+            {
+                xtype: 'button',
+                text: 'Stop',
+                scale: 'medium'
+            }]
         },
         {
             xtype: 'gridpanel',
-
             height: 400,
             columnWidth: 0.65,
-
             bind: {
                 selection: '{theCompany}'
             },
             store: {
-                type: 'personnel'
+                type: 'records'
             },
             flex: 2,
             columns: [{

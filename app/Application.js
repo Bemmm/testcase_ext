@@ -16,7 +16,7 @@ Ext.define('testcase.Application', {
     },
 
     stores: [
-        // TODO: add global / shared stores here
+        'Records'
     ],
 
     launch: function () {

@@ -6,13 +6,13 @@ Ext.define('testcase.view.main.List', {
     xtype: 'mainlist',
 
     requires: [
-        'testcase.store.Personnel'
+        'testcase.store.Records'
     ],
 
-    title: 'Personnel',
+    title: 'Records',
 
     store: {
-        type: 'personnel'
+        type: 'Records'
     },
 
     columns: [
